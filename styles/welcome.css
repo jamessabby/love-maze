@@ -1,3 +1,5 @@
+/* Global Styles */
+
 body {
 background-color: lightblue;
 display: flex;
@@ -11,6 +13,8 @@ background-image: url(/images/background.png);
 background-position: center;
 background-size: cover;
 }
+
+/* Welcome Component Styles */
 
 main {
   background-color: lightblue;
@@ -81,6 +85,8 @@ transition: 0.3s ease, transform 0.2s ease;
   transform: scale(1.15);
 }
 
+/* Character Styles */
+
 #sabby {
   position: absolute;
   height: 18rem;
@@ -96,28 +102,31 @@ transition: 0.3s ease, transform 0.2s ease;
   right:-2rem;
 }
 
+/* Falling Hearts Animation */
+
 .hearts-container {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100%;  /* Width and height covers the whole browser page */
     height: 100%;
-    overflow: hidden;
-    pointer-events: none; 
+    overflow: hidden;   /* Ensures hearts don't show outside this container */
+    pointer-events: none; animation: fall linear infinite;
     z-index: -1; 
 }
 
 .heart {
-    position: absolute;
-    
-    background-image: url('/images/heart.svg'); 
-    background-size: contain; /
+    position: absolute;   
+    background-image:   url('/images/heart.svg'); 
+    background-size: contain; /* sets the size of svg element to match the set width and height */
     background-repeat: no-repeat;
     width: 30px; 
     height: 30px; 
     
     /* Animation properties */
-    animation: fall linear infinite;
+    animation: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 @keyframes fall {
@@ -129,10 +138,10 @@ transition: 0.3s ease, transform 0.2s ease;
         opacity: 1;
     }
     60% { 
-        opacity: 0.5;
+        opacity: 0.5;                        /* it slowly fades */
     }
     80% { 
-        opacity: 0.2;
+        opacity: 0.2;       
     }
     100% {
         transform: translateY(100vh); 
