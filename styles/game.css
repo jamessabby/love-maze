@@ -17,6 +17,7 @@ overflow: hidden;
 }
 
 .dialogue-container {
+  display: none;
   position: relative;
   width: 70%;
   height: 70%;
@@ -92,11 +93,10 @@ overflow: hidden;
 .rose {
     position: absolute;   
     background-image:   url('/images/rose.svg'); 
-    background-size: contain;
     background-repeat: no-repeat;
     width: 70px; 
     height: 70px; 
-    
+    background-size: contain;
     /* Animation properties */
     animation: fall;
     animation-timing-function: linear;
@@ -136,5 +136,38 @@ overflow: hidden;
 }
 
 .maze-scene {
-  display: none;
+  position: relative;
+  width: 50%;
+  height: 100%;
+  top: 20px;
+  z-index: 1;
+
+  }
+
+.maze-heart {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;  
+  background-color: #FFDFDF;
+  border-radius: 50px;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
+
+.sab, .isha {
+  position: absolute;
+  height: 8rem;
+  z-index: 2;
+}
+
+.sab {
+  top: 65%;
+  left: 15%;
+}
+
+.isha {
+  top: 20%;
+  right: 0%;
+}
+jjjdsadasdas
