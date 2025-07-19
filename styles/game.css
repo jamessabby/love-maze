@@ -1,0 +1,140 @@
+
+body {
+background-color: lightblue;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+margin: 0;
+ 
+background-image: url(/images/background-2.jpeg);
+background-position: center;
+background-size: cover;
+
+overflow: hidden;
+
+}
+
+.dialogue-container {
+  position: relative;
+  width: 70%;
+  height: 70%;
+  top: 20px;
+}
+
+.sab-rose {
+  position: absolute;
+  width: 40%;
+  bottom: 0;
+  left: 35%;
+  transform: translateX(-50%);
+}
+
+.dialogue-box {
+  position: absolute;
+  top: -10%;
+  left: 42%;
+  width: 80%;
+  height: 70%;
+  border-radius: 10px;
+}
+
+.dialogue-text {
+  position: absolute;
+  font-size: 2rem;
+  font-family: "Pixelify Sans", sans-serif;
+  color: black;
+  width: 48%;
+  text-align: center;
+  top: 85px;
+  left: 65px;
+  z-index: 1;
+}
+
+.yes-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 25%;
+
+  padding: 10px 20px;
+  font-size: 2rem;
+  font-family: "Pixelify Sans", sans-serif;
+
+  border: solid 2px black;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.yes-btn:hover {
+  transform: scale(1.15);
+}
+
+.box {
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  top: 0;
+  left: 0;
+} 
+
+.rose-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;  /* Width and height covers the whole browser page */
+    height: 100%;
+    overflow: hidden;   /* Ensures hearts don't show outside this container */
+    pointer-events: none; animation: fall linear infinite;
+    z-index: -1; 
+}
+.rose {
+    position: absolute;   
+    background-image:   url('/images/rose.svg'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 70px; 
+    height: 70px; 
+    
+    /* Animation properties */
+    animation: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+    40% { 
+        opacity: 1;
+    }
+    60% { 
+        opacity: 0.5;                        /* it slowly fades */
+    }
+    80% { 
+        opacity: 0.2;       
+    }
+    100% {
+        transform: translateY(100vh); 
+        opacity: 0; 
+    }
+}
+
+/* --- Welcome Screen Transition (for play button) --- */
+@keyframes fadeOutScale {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8); 
+    }
+}
+
+.maze-scene {
+  display: none;
+}

@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const heartsContainer = document.querySelector('.hearts-container') // grabs the hearts-container
+  const playButton = document.querySelector('.play-btn');
 
   function createHeart() {
       const heart = document.createElement('div');    // creates new div element
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       heart.style.animationDelay = `${delay}s`;
 
       heartsContainer.appendChild(heart);   // It takes the heart element you've just created and styled, and inserts it as a child inside the heartsContainer HTML element. 
-s
+
       // Remove heart after its animation ends to clean up DOM
       heart.addEventListener('animationend', () => {
           heart.remove();
@@ -26,5 +27,13 @@ s
   }
 
   const heartInterval = setInterval(createHeart, 500);    // the function will be called every 0.5s
+
+    playButton.addEventListener('click', () => {
+    clearInterval(heartInterval);
+    setTimeout(() => {
+      window.location.href = 'game.html'
+    }, 400)
+  })
 })
+
 
