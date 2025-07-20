@@ -1,6 +1,6 @@
 
 body {
-background-color: lightblue;
+background: lightblue url('../images/background-2.jpeg') center/cover no-repeat;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -54,22 +54,22 @@ overflow: hidden;
 }
 
 .yes-btn {
-  position: absolute;
-  bottom: 10px;
+   position: absolute;
+  bottom: 1rem;
   left: 25%;
-
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   font-size: 2rem;
   font-family: "Pixelify Sans", sans-serif;
-
-  border: solid 2px black;
-  border-radius: 20px;
+  border: 2px solid black;
+  border-radius: 1.25rem;
   cursor: pointer;
   transition: transform 0.3s ease;
+  background: #fff;
 }
 
 .yes-btn:hover {
   transform: scale(1.15);
+  outline: 2px solid #333;
 }
 
 .box {
@@ -86,21 +86,16 @@ overflow: hidden;
     left: 0;
     width: 100%;  /* Width and height covers the whole browser page */
     height: 100%;
-    overflow: hidden;   /* Ensures hearts don't show outside this container */
+    overflow: hidden;   
     pointer-events: none; animation: fall linear infinite;
     z-index: -1; 
 }
 .rose {
-    position: absolute;   
-    background-image:   url('/images/rose.svg'); 
-    background-repeat: no-repeat;
-    width: 70px; 
-    height: 70px; 
-    background-size: contain;
-    /* Animation properties */
-    animation: fall;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+  position: absolute;
+  background: url('../images/rose.svg') no-repeat center/contain;
+  width: 4.375rem;
+  height: 4.375rem;
+  animation: fall linear infinite;
 }
 
 @keyframes fall {
@@ -137,37 +132,129 @@ overflow: hidden;
 
 .maze-scene {
   position: relative;
-  width: 50%;
+  width: 40%;
   height: 100%;
-  top: 20px;
+  top: 0;
   z-index: 1;
-
+  display: flex; justify-content: center; align-items: center;
   }
 
-.maze-heart {
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  height: 100%;  
-  background-color: #FFDFDF;
-  border-radius: 50px;
-  margin-top: 20px;
-  margin-bottom: 50px;
+.maze-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 800px;
+    height: 700px;
+    border-radius: 50px;
+    background-color: #FFDFDF;
 }
+
+.maze-walls {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 800px;
+    height: 700px;
+}
+
 
 .sab, .isha {
   position: absolute;
-  height: 8rem;
   z-index: 2;
 }
 
 .sab {
-  top: 65%;
-  left: 15%;
+  height: 3.3rem;
+  top: 46.3%;
+  left: 8%;
 }
 
 .isha {
-  top: 20%;
-  right: 0%;
+  height: 4rem;
+  top: 45%;
+  right: 38px;
 }
-jjjdsadasdas
+
+.header {
+  display: flex;
+  align-items: center ;
+  justify-content: center;
+}
+
+h1, p {
+  position: absolute;
+  z-index: 2;
+}
+
+h1{
+  font-family: "Pixelify Sans", sans-serif;
+  top: 1.8rem;
+  font-size: 3.5rem;
+}
+
+p {
+  font-family: "Pixelify Sans", sans-serif;
+  top: 6.8rem;
+  font-size: 1.5rem;
+}
+
+.controls {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  bottom: 5rem;
+  right: 33rem;
+  z-index: 3;
+  gap: 2px;
+}
+
+.up-button, .right-button, 
+.down-button, .left-button {
+  display: flex;
+  height: 50px;
+  width: 50px;  
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 50%;
+  transition: 0.3s ease, transform 0.2s ease;
+  z-index: 3;
+  font-size: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.up-button:active, .right-button:active, .left-button:active, .down-button:active {
+  transform: scale(1.50);
+}
+
+.up-button {
+  background-image: url(/images/up-arrow.svg);
+  grid-column: 2;
+  grid-row: 1;
+
+}
+
+.left-button {
+  background-image: url(/images/left-arrow.svg);
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.right-button {
+  background-image: url(/images/right-arrow.svg);
+  grid-column: 3;
+  grid-row: 2;
+}
+
+
+.down-button {
+  background-image: url(/images/down-arrow.svg);
+  grid-column: 2;
+  grid-row: 3;
+}

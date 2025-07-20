@@ -47,7 +47,9 @@ main {
 
 .greeting {
   font-family: "Lilita One", sans-serif;
-  font-size: 5rem;
+  font-size: 4.5rem;
+  text-align: center;
+  width: 50rem;
   margin-bottom: 0;
 }
 
@@ -90,7 +92,7 @@ transition: 0.3s ease, transform 0.2s ease;
 #sabby {
   position: absolute;
   height: 18rem;
-  top: 10rem;
+  top: 8rem;
   left: -2rem;
 
   transition: transform 0.3s ease;
@@ -103,7 +105,7 @@ transition: 0.3s ease, transform 0.2s ease;
 #isha {
   position: absolute;
   height: 17rem;
-  top: 11em;
+  top: 8rem;
   width: 13rem;
   right:-2rem;
 
