@@ -16,15 +16,15 @@ overflow: hidden;
 
 }
 
-.dialogue-container {
-  display: none;
+.dialogueContainer {
+  
   position: relative;
   width: 70%;
   height: 70%;
   top: 20px;
 }
 
-.sab-rose {
+.sabRose {
   position: absolute;
   width: 40%;
   bottom: 0;
@@ -32,7 +32,7 @@ overflow: hidden;
   transform: translateX(-50%);
 }
 
-.dialogue-box {
+.dialogueBox {
   position: absolute;
   top: -10%;
   left: 42%;
@@ -41,19 +41,19 @@ overflow: hidden;
   border-radius: 10px;
 }
 
-.dialogue-text {
+.dialogueText {
   position: absolute;
   font-size: 2rem;
   font-family: "Pixelify Sans", sans-serif;
   color: black;
   width: 48%;
   text-align: center;
-  top: 85px;
+  top: 60px;
   left: 65px;
   z-index: 1;
 }
 
-.yes-btn {
+.yesBtn {
    position: absolute;
   bottom: 1rem;
   left: 25%;
@@ -67,7 +67,7 @@ overflow: hidden;
   background: #fff;
 }
 
-.yes-btn:hover {
+.yesBtn:hover {
   transform: scale(1.15);
   outline: 2px solid #333;
 }
@@ -80,7 +80,7 @@ overflow: hidden;
   left: 0;
 } 
 
-.rose-container {
+.roseContainer {
     position: absolute;
     top: 0;
     left: 0;
@@ -130,16 +130,17 @@ overflow: hidden;
     }
 }
 
-.maze-scene {
+.mazeScene {
+  display: none;
   position: relative;
   width: 40%;
   height: 100%;
   top: 0;
   z-index: 1;
-  display: flex; justify-content: center; align-items: center;
+  /* display: flex; justify-content: center; align-items: center; */
   }
 
-.maze-background {
+.mazeBackground {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -149,9 +150,10 @@ overflow: hidden;
     height: 700px;
     border-radius: 50px;
     background-color: #FFDFDF;
+    border: solid 4px;
 }
 
-.maze-walls {
+.mazeWalls {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -161,16 +163,15 @@ overflow: hidden;
     height: 700px;
 }
 
-
 .sab, .isha {
   position: absolute;
   z-index: 2;
 }
 
 .sab {
-  height: 3.3rem;
-  top: 46.3%;
-  left: 8%;
+  height: 4rem;
+  top: 360px;
+  left: 60px;
 }
 
 .isha {
@@ -203,8 +204,9 @@ p {
 }
 
 .controls {
+  display: none;
   position: absolute;
-  display: grid;
+  /* display: grid; */
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   bottom: 5rem;
@@ -213,8 +215,8 @@ p {
   gap: 2px;
 }
 
-.up-button, .right-button, 
-.down-button, .left-button {
+.upButton, .rightButton, 
+.downButton, .leftButton {
   display: flex;
   height: 50px;
   width: 50px;  
@@ -229,31 +231,31 @@ p {
   background-position: center;
 }
 
-.up-button:active, .right-button:active, .left-button:active, .down-button:active {
+.upButton:active, .rightButton:active, .leftButton:active, .downButton:active {
   transform: scale(1.50);
 }
 
-.up-button {
+.upButton {
   background-image: url(/images/up-arrow.svg);
   grid-column: 2;
   grid-row: 1;
 
 }
 
-.left-button {
+.leftButton {
   background-image: url(/images/left-arrow.svg);
   grid-column: 1;
   grid-row: 2;
 }
 
-.right-button {
+.rightButton {
   background-image: url(/images/right-arrow.svg);
   grid-column: 3;
   grid-row: 2;
 }
 
 
-.down-button {
+.downButton {
   background-image: url(/images/down-arrow.svg);
   grid-column: 2;
   grid-row: 3;

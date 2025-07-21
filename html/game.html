@@ -13,35 +13,37 @@
     />
   </head>
   <body>
-    <div class="rose-container"></div>
-    <div class="dialogue-container">
-      <img src="/images/sab-rose.svg" class="sab-rose" />
-      <div class="dialogue-box">
-        <p class="dialogue-text">
+    <div class="roseContainer"></div>
+    <div class="dialogueContainer">
+      <img src="/images/sab-rose.svg" class="sabRose" />
+      <div class="dialogueBox">
+        <p class="dialogueText">
           James wants to give you a flower and a kiss, can you help him go
           through the maze?
         </p>
         <img src="/images/chatbox.svg" class="box" />
-        <button class="yes-btn">Yes</button>
+        <button class="yesBtn">Yes</button>
       </div>
     </div>
-    <div class="maze-scene">
+    <div class="mazeScene">
         <div class="header">
           <h1>Love Maze</h1>
           <p>by Sab</p>
         </div>
         <div class="images">
-          <img src="/images/maze-walls.png" class="maze-walls">
-          <img src="/images/maze-background.png" class="maze-background" >
+          <img src="/images/maze-walls.png" class="mazeWalls">
+          <canvas class="collisionCanvas"></canvas>
+          <img src="/images/maze-background.png" class="mazeBackground" >
+          <canvas id="collisionCanvas" width="800" height="700" style="display: none;"></canvas>
           <img src="/images/sab.svg" class="sab">
           <img src="/images/isha.svg" class="isha">
         </div>
       </div>
       <div class="controls">
-        <button class="up-button"></button>
-        <button class="left-button"></button>
-        <button class="right-button"></button>
-        <button class="down-button"></button>
+        <button class="upButton"></button>
+        <button class="leftButton"></button>
+        <button class="rightButton"></button>
+        <button class="downButton"></button>
       </div>
     </div>
     <script src="/scripts/game.js"></script>
