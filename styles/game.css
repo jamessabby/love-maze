@@ -170,14 +170,16 @@ overflow: hidden;
 
 .sab {
   height: 4rem;
+  width: 4rem;
   top: 360px;
   left: 60px;
 }
 
 .isha {
   height: 4rem;
-  top: 45%;
-  right: 38px;
+  width: 4rem;
+  top: 348px;
+  right: 40px;
 }
 
 .header {

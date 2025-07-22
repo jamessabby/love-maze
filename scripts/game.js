@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const roseContainer = document.querySelector('roseContainer');
+  const roseContainer = document.querySelector('.roseContainer');
   const yesBtn = document.querySelector('.yesBtn');
 
   const upButton = document.querySelector('.upButton');
@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const sabCharacter = document.querySelector('.sab');
   const ishaCharacter = document.querySelector('.isha');
-
-  const mazeWalls = document.querySelector('.mazeWalls');
+  
+  
 
   // HANDLES THE FALLING ROSES EFFECT
   function createRose() {
@@ -58,40 +58,88 @@ document.addEventListener('DOMContentLoaded', () => {
   function smallCharacter() {
     if (isClicked) {
       sabCharacter.style.height = `${2}rem`;
+      sabCharacter.style.width = `${2}rem`;
     }
   }
 
+  function winChecker() {
+  let currentLeft = parseInt(getComputedStyle(sabCharacter).left);
+  let currentTop = parseInt(getComputedStyle(sabCharacter).top)
+  
+  if (currentLeft === 560 && currentTop === 360) {
+      sabCharacter.style.height = `${4}rem`;
+      sabCharacter.style.width = `${4}rem`;
+      sabCharacter.style.top = `${348}px`;
+    };
+  }
+
+
   // CONTROL BUTTONS
-  upButton.addEventListener('click', () => {
+  function moveUp() {
     isClicked = true;
     smallCharacter();
     let currentLocation = parseInt(getComputedStyle(sabCharacter).top || 0);
     let newLocation = currentLocation - moveStep;
     sabCharacter.style.top = newLocation + 'px';
-  });
+    winChecker();
+  }
 
-  rightButton.addEventListener('click', () => {
+  function moveRight() {
     isClicked = true;
     smallCharacter();
     let currentLocation = parseInt(getComputedStyle(sabCharacter).left || 0);
     let newLocation = currentLocation + moveStep;
     sabCharacter.style.left = newLocation + 'px';
-  });
+    winChecker()
+  }
 
-  leftButton.addEventListener('click', () => {
+  function moveLeft() {
     isClicked = true;
     smallCharacter();
     let currentLocation = parseInt(getComputedStyle(sabCharacter).left || 0);
     let newLocation = currentLocation - moveStep;
     sabCharacter.style.left = newLocation + 'px';
-  });
+    winChecker()
+  }
 
-  downButton.addEventListener('click', () => {
+  function moveDown() {
     isClicked = true;
     smallCharacter();
     let currentLocation = parseInt(getComputedStyle(sabCharacter).top || 0);
     let newLocation = currentLocation + moveStep;
     sabCharacter.style.top = newLocation + 'px';
-  });
+    winChecker()
+  }
 
+  upButton.addEventListener('click', moveUp);
+  rightButton.addEventListener('click', moveRight);
+  leftButton.addEventListener('click', moveLeft); 
+  downButton.addEventListener('click', moveDown);
+
+  document.addEventListener("keydown", function(event) {
+    moveButtons(event.key);
+  })
+
+    function moveButtons(key) {
+    switch(key) {
+
+      case 'ArrowUp':
+        moveUp();
+        break;
+
+      case 'ArrowRight':
+        moveRight();
+        break; 
+
+      case 'ArrowLeft':
+        moveLeft();
+        break;
+      
+      case 'ArrowDown':
+        moveDown();
+        break;
+    }
+  }
+
+  
 });
