@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sabCharacter = document.querySelector('.sab');
   const ishaCharacter = document.querySelector('.isha');
   
-  
+  const finishScene = document.querySelector('.finishScene');
 
   // HANDLES THE FALLING ROSES EFFECT
   function createRose() {
@@ -34,11 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const roseInterval = setInterval(createRose, 2000);
 
+  const maze = document.querySelector('.mazeScene');
+  const controls = document.querySelector('.controls');
+
   // THE MAZE GAME APPEARS WHEN THE YES BUTTON WAS CLICKED
   yesBtn.addEventListener('click', () => {
     const dialogue = document.querySelector('.dialogueContainer');
-    const maze = document.querySelector('.mazeScene');
-    const controls = document.querySelector('.controls');
+    
 
     dialogue.style.display = 'none';
 
@@ -63,14 +65,20 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function winChecker() {
-  let currentLeft = parseInt(getComputedStyle(sabCharacter).left);
-  let currentTop = parseInt(getComputedStyle(sabCharacter).top)
-  
-  if (currentLeft === 560 && currentTop === 360) {
-      sabCharacter.style.height = `${4}rem`;
-      sabCharacter.style.width = `${4}rem`;
-      sabCharacter.style.top = `${348}px`;
-    };
+    let currentLeft = parseInt(getComputedStyle(sabCharacter).left);
+    let currentTop = parseInt(getComputedStyle(sabCharacter).top)
+    
+    if (currentLeft === 560 && currentTop === 360 || currentLeft === 560 && currentTop === 380) {
+        sabCharacter.style.height = `${4}rem`;
+        sabCharacter.style.width = `${4}rem`;
+        sabCharacter.style.top = `${348}px`;
+
+        maze.style.display = 'none';
+        controls.style.display = 'none';
+
+        finishScene.style.display = 'flex';
+      };
+
   }
 
 

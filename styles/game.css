@@ -170,7 +170,7 @@ overflow: hidden;
 
 .sab {
   height: 4rem;
-  width: 4rem;
+  width: 4rem;  
   top: 360px;
   left: 60px;
 }
@@ -180,6 +180,7 @@ overflow: hidden;
   width: 4rem;
   top: 348px;
   right: 40px;
+
 }
 
 .header {
@@ -261,4 +262,46 @@ p {
   background-image: url(/images/down-arrow.svg);
   grid-column: 2;
   grid-row: 3;
+}
+
+.finishScene {
+  display: none;
+  position: relative;
+  width: 40%;
+  height: 100%;
+  top: 0;
+  z-index: 1;
+  /* display: flex; justify-content: center; align-items: center; */
+  }
+
+.sabStand {
+  position: absolute;
+  width: 25rem;
+  bottom: 0;
+  top: 10rem;
+  left: 30%;
+  transform: translateX(-50%);
+}
+
+.ishaStand {
+  position: absolute;
+  width: 19rem;
+  top: 13rem;
+  bottom: 0;
+  left: 75%;
+  transform: translateX(-50%);
+}
+
+.finishBox {
+  position: absolute;
+  left: 20%;  
+  width: 26rem;
+  height: 20rem;
+}
+
+.finish {
+    font-family: "Pixelify Sans", sans-serif;
+    top: 5.8rem;
+    left: 14rem;
+    font-size: 1.5rem;
 }
