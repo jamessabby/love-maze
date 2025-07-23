@@ -238,6 +238,13 @@ p {
   transform: scale(1.50);
 }
 
+.upButton.active,
+.leftButton.active,
+.rightButton.active,
+.downButton.active {
+  transform: scale(1.50);
+}
+
 .upButton {
   background-image: url(/images/up-arrow.svg);
   grid-column: 2;

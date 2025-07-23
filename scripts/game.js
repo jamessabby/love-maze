@@ -137,6 +137,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let newLocation = currentLocation - moveStep;
     sabCharacter.style.top = newLocation + 'px';
     winChecker();
+    upButton.classList.add('active');
+    setTimeout(function() { 
+      upButton.classList.remove("active"); 
+    }, 100); 
   }
 
   function moveRight() {
@@ -146,6 +150,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let newLocation = currentLocation + moveStep;
     sabCharacter.style.left = newLocation + 'px';
     winChecker()
+    rightButton.classList.add('active');
+    setTimeout(function() { 
+      rightButton.classList.remove("active"); 
+    }, 100); 
   }
 
   function moveLeft() {
@@ -154,7 +162,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentLocation = parseInt(getComputedStyle(sabCharacter).left || 0);
     let newLocation = currentLocation - moveStep;
     sabCharacter.style.left = newLocation + 'px';
-    winChecker()
+    winChecker();
+    leftButton.classList.add('active');
+    setTimeout(function() { 
+      leftButton.classList.remove("active"); 
+    }, 100); 
   }
 
   function moveDown() {
@@ -163,7 +175,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentLocation = parseInt(getComputedStyle(sabCharacter).top || 0);
     let newLocation = currentLocation + moveStep;
     sabCharacter.style.top = newLocation + 'px';
-    winChecker()
+    winChecker();
+    downButtons.classList.add('active');
+    setTimeout(function() { 
+      downButton.classList.remove("active"); 
+    }, 100); 
   }
 
   upButton.addEventListener('click', moveUp);
