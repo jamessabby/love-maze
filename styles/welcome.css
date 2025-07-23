@@ -14,9 +14,14 @@ background-position: center;
 background-size: cover;
 }
 
+.fake-error {
+  font-size: 3rem;
+}
+
 /* Welcome Component Styles */
 
 main {
+  display: none;
   background-color: lightblue;
   width: 45%;
   height: 50%;
@@ -120,14 +125,15 @@ transition: 0.3s ease, transform 0.2s ease;
 /* Falling Hearts Animation */
 
 .hearts-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;  /* Width and height covers the whole browser page */
-    height: 100%;
-    overflow: hidden;   /* Ensures hearts don't show outside this container */
-    pointer-events: none; animation: fall linear infinite;
-    z-index: -1; 
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;  /* Width and height covers the whole browser page */
+  height: 100%;
+  overflow: hidden;   /* Ensures hearts don't show outside this container */
+  pointer-events: none; animation: fall linear infinite;
+  z-index: -1; 
 }
 
 .heart {

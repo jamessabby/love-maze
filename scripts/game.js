@@ -11,6 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const ishaCharacter = document.querySelector('.isha');
   
   const finishScene = document.querySelector('.finishScene');
+  let finishTexts = document.querySelector('.finish'); 
+  const nextButton = document.querySelector('.nextButton');
+
+  let gameAudio = new Audio('../audio/game-audio.mp3');
+  let finishAudio = new Audio('../audio/finish-audio.mp3');
+  gameAudio.volume = 1.0;
+  gameAudio.loop = true;
+  gameAudio.play();
+
+  const sabStand = document.querySelector('.sabStand')
+  const giveRose = document.querySelector('.giveRose')
 
   // HANDLES THE FALLING ROSES EFFECT
   function createRose() {
@@ -39,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // THE MAZE GAME APPEARS WHEN THE YES BUTTON WAS CLICKED
   yesBtn.addEventListener('click', () => {
+
     const dialogue = document.querySelector('.dialogueContainer');
     
 
@@ -66,9 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function winChecker() {
     let currentLeft = parseInt(getComputedStyle(sabCharacter).left);
-    let currentTop = parseInt(getComputedStyle(sabCharacter).top)
+    let currentTop = parseInt(getComputedStyle(sabCharacter).top);
     
     if (currentLeft === 560 && currentTop === 360 || currentLeft === 560 && currentTop === 380) {
+
+        gameAudio.pause();
+        finishAudio.play();
+
         sabCharacter.style.height = `${4}rem`;
         sabCharacter.style.width = `${4}rem`;
         sabCharacter.style.top = `${348}px`;
@@ -77,6 +93,37 @@ document.addEventListener('DOMContentLoaded', () => {
         controls.style.display = 'none';
 
         finishScene.style.display = 'flex';
+
+        let nextLine = 0;
+        nextButton.addEventListener('click', () => {
+          nextLine++;
+          if (nextLine === 1) {
+            document.querySelector('.firstLine').style.opacity = 0;
+            document.querySelector('.secondLine').style.opacity = 1;
+          } else if (nextLine === 2) {
+            document.querySelector('.secondLine').style.opacity = 0;
+            document.querySelector('.thirdLine').style.opacity = 1;
+          } else if (nextLine === 3) {
+            document.querySelector('.thirdLine').style.opacity = 0;
+            document.querySelector('.fourthLine').style.opacity = 1;
+          } else if (nextLine === 4) {
+            document.querySelector('.fourthLine').style.opacity = 0;
+            document.querySelector('.fifthLine').style.opacity = 1;
+          } else if (nextLine === 5) {
+            document.querySelector('.fifthLine').style.opacity = 0;
+            document.querySelector('.sixthLine').style.opacity = 1;
+            sabStand.style.display = 'none';
+            giveRose.style.display = 'block';
+          } else if (nextLine === 6) {
+            document.querySelector('.sixthLine').style.opacity = 0;
+            document.querySelector('.seventhLine').style.opacity = 1;
+          } else {
+             clearInterval(roseInterval);
+             setTimeout(() => {
+                window.location.href = 'index.html'
+              }, 400);
+          }
+        })
       };
 
   }
