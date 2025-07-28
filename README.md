@@ -6,6 +6,7 @@ Hey there! 👋
 
 This project was a fantastic learning experience for me as a beginner full-stack engineer. While I've put a lot of effort into it, here are a few things to keep in mind:
 
+* **Mobile Responsiveness:** Currently, this game is **not optimized for mobile devices**. It's best enjoyed on a desktop or laptop browser.
 * **Maze Walls:** You might notice you can go through the maze walls right now! Implementing true pixel-perfect collision detection for such an intricate, non-rectangular maze was my significant challenge for this beginner project.
 * **Code Quality:** As a beginner, the code might be a bit messy in places. This project was all about applying fundamental concepts and solving problems, not necessarily writing the most optimized or elegant code. It's a snapshot of my learning journey!
 * **Learning & Growth:** I focused on understanding *why* things work and building solutions myself, rather than just copying. Every bug and every solution was a step forward.
